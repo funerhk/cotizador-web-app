@@ -1,0 +1,50 @@
+<div *ngIf="viewMode">
+  <div class="edit-form">
+    <h4>Detalle de producto</h4>
+    <form>
+      <div class="form-group">
+        <label><strong>SKU:</strong></label> {{ currentProducts.SKU }}
+      </div>
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="currentProducts.name"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Descripción</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentProducts.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="price">Precio</label>
+        <input
+          type="number"
+          class="form-control"
+          id="price"
+          [(ngModel)]="currentProducts.price"
+          name="price"
+        />
+      </div>
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteProduct()">
+      Borrar
+    </button>
+
+    <button type="submit" class="badge badge-success mb-2" (click)="updateProduct()">
+      Modificar
+    </button>
+    <p>{{ message }}</p>
+  </div>
+</div>

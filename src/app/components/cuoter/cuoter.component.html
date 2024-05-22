@@ -1,0 +1,31 @@
+<div *ngIf="viewMode">
+    <div class="edit-form">
+      <h4>Cotizacion</h4>
+      <form>
+        <div class="form-group">
+          <label><strong>SKU:</strong></label> {{ currentProducts.SKU }}
+        </div>
+          <div class="form-group">
+          <label><strong>Nombre:</strong></label> {{ currentProducts.name }}
+        </div>
+          <div class="form-group">
+          <label><strong>Precio:</strong></label> {{ currentProducts.price }}
+        </div>
+          <div class="form-group">
+          <label><strong>Plazo:</strong></label> {{ currentDeadlines.deadline }}
+        </div>
+          <div class="form-group">
+          <label><strong>Pago normal:</strong></label> {{ currentQuoter.normalPayment }}
+        </div>
+          <div class="form-group">
+          <label><strong>Pago puntual:</strong></label> {{ currentQuoter.punctualPayment }}
+        </div>
+        
+      </form>
+        <button type="submit" class="badge badge-success mb-2" (click)="getQuoter()">
+        Cotizar
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,53 @@
+<div class="row">
+
+  <div *ngIf="deadlines;">
+    <div class="col-12">
+      <h4>Lista de plazos</h4>
+      <ul class="list-group">
+        @for (element of deadlines; track element.deadline; let i = $index) {
+        <li
+          class="list-group-item"
+          [class.active]="i == currentIndex"
+          (click)="setActiveDeadLines(element, i)"
+        >
+          {{ element.deadline }} plazos
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="col-8">
+    <h4>Cotizacion</h4>
+    <form>
+      <div class="form-group">
+        <label><strong>SKU:</strong></label> {{ currentProducts.SKU }}
+      </div>
+        <div class="form-group">
+        <label><strong>Nombre:</strong></label> {{ currentProducts.name }}
+      </div>
+        <div class="form-group">
+        <label><strong>Precio:</strong></label> {{ currentProducts.price }}
+      </div>
+        <div class="form-group">
+        <label><strong>Plazo:</strong></label> {{ currentDeadlines.deadline }}
+      </div>
+        <div class="form-group">
+        <label><strong>Interes normal:</strong></label> {{ currentQuoter.normalPayment }}
+      </div>
+        <div class="form-group">
+        <label><strong>Interes puntual:</strong></label> {{ currentQuoter.punctualPayment }}
+      </div>
+      
+    </form>
+    <button type="submit" class="badge badge-success mb-2" (click)="getQuoter()">
+      Cotizar
+    </button>
+  </div>
+</div>
+
+
+
+
+  
